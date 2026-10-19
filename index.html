@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f3ed">
+  <meta name="description" content="Descubra os nossos tratamentos de estética, veja resultados reais e marque a sua visita.">
+  <title>Atelier de Beleza | Estética & Bem-estar</title>
+
+  <style>
+    :root {
+      --cream: #f8f3ed;
+      --white: #fffdf9;
+      --rose: #c38e82;
+      --brown: #59453d;
+      --gold: #ad8a58;
+      --text: #65574f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--brown);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { display: block; max-width: 100%; }
+
+    .container { width: min(1120px, 90%); margin: auto; }
+
+    header {
+      background: rgba(255,253,249,.96);
+      border-bottom: 1px solid #eee4d9;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--rose); }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover { color: var(--rose); }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      background: var(--brown);
+      color: white;
+      border-radius: 3px;
+      font-size: 13px;
+      transition: .2s;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .button:hover { background: var(--rose); }
+
+    .hero {
+      background: var(--cream);
+      padding: 75px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; }
+
+    h1 {
+      font-size: clamp(40px, 5vw, 65px);
+      line-height: 1.12;
+      margin: 18px 0;
+    }
+
+    h1 em { color: var(--rose); font-weight: normal; }
+
+    .hero p { max-width: 430px; color: var(--text); margin-bottom: 25px; }
+
+    .hero img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 150px 150px 4px 4px;
+    }
+
+    section { padding: 80px 0; }
+
+    .section-head { text-align: center; margin-bottom: 38px; }
+
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      margin: 10px 0;
+    }
+
+    .section-head p { color: var(--text); font-size: 14px; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service {
+      background: var(--cream);
+      padding: 30px 24px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .service:hover { border-color: var(--rose); }
+
+    .service .number { color: var(--gold); font-size: 12px; }
+
+    .service h3 { font-size: 24px; margin: 12px 0; }
+
+    .service p { font-size: 14px; color: var(--text); }
+
+    .gallery-section { background: #f8f3ed; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery figure { background: white; padding: 8px; }
+
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      background: #eadfd4;
+    }
+
+    .gallery figcaption { padding: 14px 8px 10px; }
+
+    .gallery h3 { font-size: 20px; }
+
+    .gallery p { color: var(--text); font-size: 12px; margin-top: 4px; }
+
+    .note {
+      margin: 25px auto 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about-grid img {
+      width: 100%;
+      height: 370px;
+      object-fit: cover;
+    }
+
+    .about-grid h2 { font-size: 40px; margin: 12px 0 20px; }
+
+    .about-grid p { color: var(--text); margin-bottom: 16px; }
+
+    .quote-section { background: var(--cream); text-align: center; }
+
+    .quote {
+      max-width: 690px;
+      margin: auto;
+      font: italic 26px/1.5 Georgia, serif;
+    }
+
+    .quote small {
+      display: block;
+      font: 12px Arial, sans-serif;
+      margin-top: 18px;
+      color: var(--gold);
+    }
+
+    .contact {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 { font-size: 43px; margin: 12px 0; }
+
+    .contact p { color: #eee1d7; margin-bottom: 24px; }
+
+    .contact .button { background: var(--rose); }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      background: #218c60;
+      color: white;
+      border-radius: 30px;
+      padding: 13px 18px;
+      font-size: 13px;
+      box-shadow: 0 4px 16px #0002;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { gap: 12px; font-size: 11px; }
+      .nav-links .button { padding: 9px; }
+      .hero { padding: 45px 0; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero img { height: 340px; }
+      .services { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .gallery img { height: 220px; }
+      section { padding: 55px 0; }
+      .about-grid img { height: 300px; }
+      .quote { font-size: 21px; }
+    }
+
+    @media (max-width: 420px) {
+      .logo { font-size: 18px; }
+      .nav-links { gap: 9px; }
+      .nav-links a:nth-child(2) { display: none; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery img { height: 175px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#inicio">Atelier <span>de Beleza</span></a>
+      <div class="nav-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#resultados">Resultados</a>
+        <a class="button" href="#contacto">Marcar visita</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Beleza · Cuidado · Confiança</div>
+          <h1>A tua beleza,<br>o nosso <em>cuidado.</em></h1>
+          <p>
+            Um espaço dedicado a ti, à tua autoestima e ao teu bem-estar.
+            Descobre os nossos tratamentos e conhece os resultados do nosso trabalho.
+          </p>
+          <a class="button" href="#resultados">Descobrir resultados →</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85"
+          alt="Ambiente de cuidados de beleza"
+        >
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Os nossos cuidados</div>
+          <h2>Serviços pensados para ti</h2>
+          <p>Cuidados personalizados, atenção ao detalhe e dedicação em cada sessão.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <span class="number">01 / ROSTO</span>
+            <h3>Estética facial</h3>
+            <p>Tratamentos adaptados às necessidades da pele e às rotinas de cuidado.</p>
+          </article>
+          <article class="service">
+            <span class="number">02 / BELEZA</span>
+            <h3>Unhas & beleza</h3>
+            <p>Detalhes cuidados, acabamentos elegantes e estilos personalizados.</p>
+          </article>
+          <article class="service">
+            <span class="number">03 / OLHAR</span>
+            <h3>Sobrancelhas & pestanas</h3>
+            <p>Realce do olhar com técnicas adequadas ao estilo de cada cliente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="resultados">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">O nosso portefólio</div>
+          <h2>Resultados que falam por si</h2>
+          <p>Conhece alguns dos trabalhos e tratamentos do nosso espaço.</p>
+        </div>
+
+        <div class="gallery">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=650&q=80" alt="Tratamento facial">
+            <figcaption><h3>Cuidados faciais</h3><p>Pele cuidada e luminosa</p></figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=650&q=80" alt="Manicure e unhas">
+            <figcaption><h3>Manicure</h3><p>Detalhes e acabamentos</p></figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=650&q=80" alt="Produtos de beleza">
+            <figcaption><h3>Ritual de beleza</h3><p>Cuidado em cada detalhe</p></figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=650&q=80" alt="Retrato de beleza">
+            <figcaption><h3>Beleza natural</h3><p>Realçar a tua individualidade</p></figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=650&q=80" alt="Momento de autocuidado">
+            <figcaption><h3>Bem-estar</h3><p>Um momento para ti</p></figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=650&q=80" alt="Cuidados e beleza">
+            <figcaption><h3>O nosso trabalho</h3><p>Dedicação e profissionalismo</p></figcaption>
+          </figure>
+        </div>
+        <p class="note">As imagens iniciais são ilustrativas. Substitui-as por fotografias dos teus próprios trabalhos, com autorização dos clientes.</p>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container about-grid">
+        <img
+          src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=900&q=85"
+          alt="Espaço de estética"
+          loading="lazy"
+        >
+        <div>
+          <div class="eyebrow">Sobre o nosso espaço</div>
+          <h2>Um lugar onde te sentes bem.</h2>
+          <p>
+            Acreditamos que cada pessoa merece um cuidado especial.
+            Trabalhamos com atenção, dedicação e uma abordagem personalizada
+            para proporcionar uma experiência de beleza e bem-estar.
+          </p>
+          <p>
+            Queremos que te sintas confiante, acolhida e feliz com o resultado.
+            Será um prazer receber-te.
+          </p>
+          <a class="button" href="#contacto">Fala connosco</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="container">
+        <div class="eyebrow">A nossa filosofia</div>
+        <p class="quote">
+          “A verdadeira beleza está no cuidado, na confiança e na forma como nos sentimos.”
+          <small>ATELIER DE BELEZA</small>
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="eyebrow">Estamos à tua espera</div>
+        <h2>Vamos cuidar de ti?</h2>
+        <p>Entra em contacto para conhecer os serviços e marcar a tua visita.</p>
+        <a class="button" id="whatsapp-link" href="https://wa.me/351000000000" target="_blank" rel="noopener noreferrer">
+          Marcar pelo WhatsApp
+        </a>
+        <p style="margin-top:20px;margin-bottom:0;font-size:13px">
+          Instagram: <a id="instagram-link" href="https://instagram.com/" target="_blank" rel="noopener noreferrer">@teu_salao</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Atelier de Beleza · Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <a class="whatsapp" id="floating-whatsapp" href="https://wa.me/351000000000" target="_blank" rel="noopener noreferrer" aria-label="Contactar pelo WhatsApp">
+    WhatsApp ↗
+  </a>
+
+  <script>
+    // PERSONALIZA AQUI OS CONTACTOS DO TEU SALÃO
+    const telefone = "351000000000"; // Indicativo + número, sem o sinal +
+    const instagram = "https://instagram.com/"; // Coloca o link do teu perfil
+
+    const mensagem = encodeURIComponent(
+      "Olá! Visitei o vosso site e gostaria de saber mais sobre os tratamentos e agendamentos."
+    );
+
+    const whatsappUrl = `https://wa.me/${telefone}?text=${mensagem}`;
+
+    document.getElementById("whatsapp-link").href = whatsappUrl;
+    document.getElementById("floating-whatsapp").href = whatsappUrl;
+    document.getElementById("instagram-link").href = instagram;
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
